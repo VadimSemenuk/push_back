@@ -1,6 +1,7 @@
 const express = require('express')
 const webPush = require('web-push');
 const cors = require('cors');
+const crypto = require("crypto");
 
 const app = express()
 app.use(cors());
@@ -33,7 +34,8 @@ const subscription = {
 };
 
 app.post('/', (req, res) => {
-    const payload = JSON.stringify({ title: 'test', message: 'test' });
+    const uuid = crypto.randomUUID();
+    const payload = JSON.stringify({ title: uuid.toString(), message: uuid.toString() });
     webPush.sendNotification(subscription, payload)
     res.status(200).send("2")
 })
