@@ -27,7 +27,7 @@ const subscription = {
 app.post('/', (req, res) => {
     const payload = JSON.stringify({ title: 'test', message: 'test' });
     webPush.sendNotification(subscription, payload)
-    res.status(200).send()
+    res.status(200).send("1")
 })
 
 const port = 3001
