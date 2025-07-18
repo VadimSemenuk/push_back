@@ -2,7 +2,6 @@ const express = require('express')
 const webPush = require('web-push');
 const cors = require('cors');
 const crypto = require("crypto");
-const {sendNotification} = require("web-push");
 
 const app = express()
 app.use(cors());
