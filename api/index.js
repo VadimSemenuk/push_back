@@ -12,16 +12,17 @@ webPush.setVapidDetails(
     'mailto:example@qq.com',
     publicKey,
     privateKey
-);
+)
 
+
+// local
 const subscription = {
-    endpoint: "https://fcm.googleapis.com/fcm/send/fGBXaGgqUjI:APA91bHDKY-Z5bzxicgBPFL7258rtL2rYIxAg4b06oRfWAnMacGOR7cUZiyRZI-BOxVPkkjsi_gDA8zhCzmygpFpFg-PVXzuwJuBBE5xzMUJkESwdBVqdD3BZ9UupQ2m2I_fN_cXp_MJ",
+    endpoint: "https://fcm.googleapis.com/fcm/send/cVUl7QygHTE:APA91bELEmYhYN9tQqQ9j-s5wMVW4qeXwga8cxuWSil6KHfR-ihLzP-5AXhsEM8LVCuSBC-oiPg0r47xsDvIfx2MnX0e6Zs5EzOrr3yPm0vKpIJiogjQhL4H0x6LmNn9ngbYXOLQLlkB",
     keys: {
-        auth: "Zu_CTmLAdkNSZmOodlsy1A",
-        p256dh: "BOEKe7a9O7fZRnuGW9KRNKjTK1njgLxESATT0pGsIMMa_-ViOTm2SkoIJaqF2370uy3JWHXu0n0LJNd18EtxII8"
+        auth: "OnLpFw5R9KZ9eBXbLAqaxA",
+        p256dh: "BIaMmwg2LynAt08WW5VggrWtnzbjWBKDcR50kyh8e7aeSx9e8FPqtr7uIK9-6bZqOXrnW8BEtS7mVdMHTouYBSo"
     }
 };
-
 
 app.post('/', (req, res) => {
     const payload = JSON.stringify({ title: 'test', message: 'test' });
@@ -29,15 +30,13 @@ app.post('/', (req, res) => {
     res.status(200).send()
 })
 
-// const port = 3001
-// app.listen(port, () => {
-//     console.log(`Example app listening on port ${port}`)
-// })
+const port = 3001
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+})
 
 // module.exports = (req, res) => {
 //     app(req, res);
 // };
 
-module.exports = (req, res) => {
-    res.status(200).send('Hello, Vercel!');
-};
+module.exports = app
